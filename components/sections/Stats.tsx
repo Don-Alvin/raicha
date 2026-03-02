@@ -1,17 +1,19 @@
+import {Users, FolderCheck, Award} from 'lucide-react';
+
 export default function Stats() {
   const stats = [
     {
-      icon: '👤',
+      icon: <Users className="w-12 h-12 text-primary" />,
       value: '30+',
       label: 'YEARS EXPERIENCE',
     },
     {
-      icon: '📁',
+      icon: <FolderCheck className="w-12 h-12 text-primary" />,
       value: '50+',
       label: 'PROJECTS COMPLETED',
     },
     {
-      icon: '✓',
+      icon: <Award className="w-12 h-12 text-primary" />,
       value: 'ISO 9001',
       label: 'CERTIFIED',
     },
