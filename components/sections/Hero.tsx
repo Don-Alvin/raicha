@@ -1,0 +1,36 @@
+import Link from 'next/link';
+
+export default function Hero() {
+  return (
+    <section className="relative h-screen bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 bg-black/50 z-0"></div>
+      
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 h-full flex items-center pb-32">
+        <div className="max-w-3xl">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            POWERING EAST AFRICA'S INFRASTRUCTURE SINCE 1994.
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-gray-200">
+            Electrical Contracting, Power Distribution & Renewable Energy Solutions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/projects"
+              className="bg-primary hover:bg-primary-dark px-8 py-4 rounded-full text-lg font-semibold transition-colors text-center"
+            >
+              OUR PROJECTS
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-colors text-center"
+            >
+              REQUEST A QUOTE
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
