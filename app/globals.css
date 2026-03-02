@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  /* This creates classes like bg-primary, text-primary-dark, etc. */
+  --color-primary: #2B7DE9;
+  --color-primary-dark: #1E5BB8;
+  --color-primary-light: #4A94FF;
+
+  --color-secondary: #FFB800;
+  --color-secondary-dark: #E0A200;
+  --color-secondary-light: #FFC933;
+}
+
