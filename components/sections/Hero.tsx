@@ -20,10 +20,10 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto px-4 h-full flex items-center pb-32">
         <div className="max-w-3xl">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-            POWERING EAST AFRICA'S INFRASTRUCTURE SINCE 1994.
+            Your Integrated Partner for Power, Security, and ICT
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200">
-            Electrical Contracting, Power Distribution & Renewable Energy Solutions.
+            We provide end-to-end electrical engineering, industrial fabrication, and smart building systems. Whether it’s a high-rise landmark or a specialized medical facility, we power the projects that move the nation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
