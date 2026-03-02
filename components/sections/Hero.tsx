@@ -1,15 +1,25 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Hero() {
   return (
     <section className="relative h-screen bg-gradient-to-br from-gray-800 to-gray-900 text-white">
       {/* Background Image Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-0"></div>
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero_bg.png"
+          alt="Electrical infrastructure in East Africa"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 h-full flex items-center pb-32">
         <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             POWERING EAST AFRICA'S INFRASTRUCTURE SINCE 1994.
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200">
