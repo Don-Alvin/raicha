@@ -4,8 +4,15 @@ import CTA from '@/components/sections/CTA';
 import GalleryStats from '@/components/sections/GalleryStats';
 
 export const metadata = {
-  title: 'Gallery - Raicha',
-  description: 'Visual showcase of our electrical and power distribution projects across East Africa',
+  title: 'Gallery',
+  description: 'Visual showcase of Raicha\'s electrical and power distribution projects across East Africa. See our work in industrial, commercial, and renewable energy installations.',
+  keywords: 'electrical projects gallery, power distribution photos, solar installation images, industrial electrical work',
+  openGraph: {
+    title: 'Project Gallery - Visual Excellence in Electrical Contracting',
+    description: 'A visual journey through 30+ years of electrical excellence.',
+    url: 'https://raicha.com/gallery',
+    images: ['/og-gallery.jpg'],
+  },
 };
 
 export default function GalleryPage() {

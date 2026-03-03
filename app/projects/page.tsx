@@ -4,8 +4,15 @@ import ProjectsGrid from '@/components/sections/ProjectsGrid';
 import CTA from '@/components/sections/CTA';
 
 export const metadata = {
-  title: 'Our Projects - Raicha',
-  description: 'Explore our portfolio of completed electrical and power distribution projects across East Africa',
+  title: 'Our Projects',
+  description: 'Explore 500+ completed electrical projects across East Africa including power distribution, solar installations, industrial systems, and commercial developments.',
+  keywords: 'electrical projects Kenya, completed projects East Africa, power distribution projects, solar projects Kenya, industrial electrical projects',
+  openGraph: {
+    title: 'Raicha Projects - 500+ Successful Installations',
+    description: 'Portfolio of electrical contracting excellence across Kenya, Uganda, Tanzania, and Rwanda.',
+    url: 'https://raicha.com/projects',
+    images: ['/og-projects.jpg'],
+  },
 };
 
 export default function ProjectsPage() {
