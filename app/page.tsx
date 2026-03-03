@@ -1,7 +1,7 @@
 import Hero from '@/components/sections/Hero';
 import Stats from '@/components/sections/Stats';
 import Expertise from '@/components/sections/Expertise';
-import FeaturedProjects from '@/components/sections/FeaturedProjects';
+import Partners from '@/components/sections/Partners';
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <Expertise />
-      <FeaturedProjects />
+      <Partners />
     </main>
   );
 }

@@ -34,7 +34,7 @@ export default function Expertise() {
         'Custom fabrication of street light poles',
       ],
       icon: '⚙️',
-      bgColor: 'bg-secondary',
+      bgColor: 'bg-gray-800',
     },
     {
       title: 'ICT & STRUCTURED CABLING',

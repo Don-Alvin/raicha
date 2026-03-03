@@ -11,6 +11,7 @@ export default function Navigation() {
   { name: 'ABOUT', href: '/about' },  // Add this line
   { name: 'SERVICES', href: '/services' },
   { name: 'PROJECTS', href: '/projects' },
+  { name: 'GALLERY', href: '/gallery'},
   { name: 'CONTACT US', href: '/contact' },
 ];
 
