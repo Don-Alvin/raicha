@@ -1,32 +1,34 @@
+import { Star, Handshake, Lightbulb, Shield, Leaf, Users } from 'lucide-react';
+
 export default function CoreValues() {
   const values = [
     {
-      icon: '⭐',
+      icon: Star,
       title: 'Excellence',
       description: 'We deliver the highest quality in every project we undertake.',
     },
     {
-      icon: '🤝',
+      icon: Handshake,
       title: 'Integrity',
       description: 'We conduct business with honesty, transparency, and accountability.',
     },
     {
-      icon: '💡',
+      icon: Lightbulb,
       title: 'Innovation',
       description: 'We embrace new technologies and creative solutions.',
     },
     {
-      icon: '🛡️',
+      icon: Shield,
       title: 'Safety',
       description: 'We prioritize the safety of our team, clients, and communities.',
     },
     {
-      icon: '🌱',
+      icon: Leaf,
       title: 'Sustainability',
       description: 'We commit to environmentally responsible practices.',
     },
     {
-      icon: '👥',
+      icon: Users,
       title: 'Teamwork',
       description: 'We collaborate effectively to achieve shared goals.',
     },
@@ -45,18 +47,21 @@ export default function CoreValues() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {values.map((value, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 p-8 rounded-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="text-6xl mb-4">{value.icon}</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                {value.title}
-              </h3>
-              <p className="text-gray-600">{value.description}</p>
-            </div>
-          ))}
+          {values.map((value, index) => {
+            const IconComponent = value.icon;
+            return (
+              <div
+                key={index}
+                className="bg-gray-50 p-8 rounded-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <IconComponent className="text-primary mb-4" size={56} strokeWidth={1.5} />
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  {value.title}
+                </h3>
+                <p className="text-gray-600">{value.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

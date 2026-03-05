@@ -1,3 +1,12 @@
+import { 
+  Zap, 
+  Battery, 
+  Settings, 
+  Wifi, 
+  Stethoscope, 
+  ShieldCheck 
+} from 'lucide-react';
+
 export default function Expertise() {
   const services = [
     {
@@ -9,7 +18,7 @@ export default function Expertise() {
         'Water supply and irrigation projects',
         'Banks, schools, hospitals, and hospitality industry',
       ],
-      icon: '⚡',
+      icon: Zap,
       bgColor: 'bg-gray-800',
     },
     {
@@ -21,7 +30,7 @@ export default function Expertise() {
         'Inverter systems with battery backups',
         'Voltage Stabilizer units up to 1000kVA',
       ],
-      icon: '🔋',
+      icon: Battery,
       bgColor: 'bg-gray-800',
     },
     {
@@ -33,8 +42,8 @@ export default function Expertise() {
         'Power Factor Correction Units',
         'Custom fabrication of street light poles',
       ],
-      icon: '⚙️',
-      bgColor: 'bg-gray-800',
+      icon: Settings,
+      bgColor: 'bg-secondary',
     },
     {
       title: 'ICT & STRUCTURED CABLING',
@@ -45,7 +54,7 @@ export default function Expertise() {
         'Block wiring and pre-wiring services',
         'Terminal equipment installation',
       ],
-      icon: '🌐',
+      icon: Wifi,
       bgColor: 'bg-gray-800',
     },
     {
@@ -57,7 +66,7 @@ export default function Expertise() {
         'Specialized electrical for factories',
         'Manufacturing facility support',
       ],
-      icon: '🏥',
+      icon: Stethoscope,
       bgColor: 'bg-gray-800',
     },
     {
@@ -69,7 +78,7 @@ export default function Expertise() {
         'Security locking systems servicing',
         'Professional locksmithing and key cutting',
       ],
-      icon: '🔒',
+      icon: ShieldCheck,
       bgColor: 'bg-gray-800',
     },
   ];
@@ -88,36 +97,43 @@ export default function Expertise() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`${service.bgColor} ${
-                service.bgColor === 'bg-secondary' ? 'text-gray-900' : 'text-white'
-              } p-8 rounded-lg hover:scale-105 transition-transform duration-300`}
-            >
-              <div className="text-6xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-              <p className={`text-sm mb-4 ${
-                service.bgColor === 'bg-secondary' ? 'text-gray-700' : 'text-gray-300'
-              }`}>
-                {service.description}
-              </p>
-              <ul className={`space-y-2 text-sm ${
-                service.bgColor === 'bg-secondary' ? 'text-gray-800' : 'text-gray-400'
-              }`}>
-                {service.details.map((detail, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <span className={`mr-2 ${
-                      service.bgColor === 'bg-secondary' ? 'text-gray-900' : 'text-primary'
-                    }`}>
-                      •
-                    </span>
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <div
+                key={index}
+                className={`${service.bgColor} ${
+                  service.bgColor === 'bg-secondary' ? 'text-gray-900' : 'text-white'
+                } p-8 rounded-lg hover:scale-105 transition-transform duration-300`}
+              >
+                <IconComponent 
+                  className={service.bgColor === 'bg-secondary' ? 'text-gray-900' : 'text-primary'} 
+                  size={56} 
+                  strokeWidth={1.5}
+                />
+                <h3 className="text-xl font-bold mb-2 mt-4">{service.title}</h3>
+                <p className={`text-sm mb-4 ${
+                  service.bgColor === 'bg-secondary' ? 'text-gray-700' : 'text-gray-300'
+                }`}>
+                  {service.description}
+                </p>
+                <ul className={`space-y-2 text-sm ${
+                  service.bgColor === 'bg-secondary' ? 'text-gray-800' : 'text-gray-400'
+                }`}>
+                  {service.details.map((detail, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <span className={`mr-2 ${
+                        service.bgColor === 'bg-secondary' ? 'text-gray-900' : 'text-primary'
+                      }`}>
+                        •
+                      </span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

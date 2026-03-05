@@ -45,18 +45,32 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>📍 Nairobi, Kenya</li>
-              <li>📧 info@raicha.com</li>
-              <li>📞 +254 XXX XXX XXX</li>
-            </ul>
-            <div className="mt-4">
-              <Link
-                href="/contact"
-                className="inline-block bg-primary hover:bg-primary-dark px-4 py-2 rounded text-sm font-semibold transition-colors"
-              >
-                Get a Quote
-              </Link>
+            <div className="space-y-4 text-sm text-gray-400">
+              {/* Head Office */}
+              <div>
+                <p className="font-semibold text-white mb-1">HEAD OFFICE - Kisumu</p>
+                <p>Union House, Gor Mahia Street</p>
+                <p>P.O Box 898, 40100</p>
+                <p>Kisumu, Kenya</p>
+                <p className="mt-1">Tel: (057) 2026188/9</p>
+                <p>Fax: (057) 2026187</p>
+              </div>
+
+              {/* Nairobi Office */}
+              <div>
+                <p className="font-semibold text-white mb-1">NAIROBI OFFICE</p>
+                <p>Engineering House, 13 Dunga Close</p>
+                <p>Off Dunga Road, Industrial Area</p>
+                <p>P.O Box 62256, 00100</p>
+                <p>Nairobi, Kenya</p>
+                <p className="mt-1">Tel: (020) 554261</p>
+                <p>Fax: (020) 554261</p>
+              </div>
+
+              <div>
+                <p className="font-semibold text-white mb-1">Email</p>
+                <p>res@raicha.com</p>
+              </div>
             </div>
           </div>
         </div>

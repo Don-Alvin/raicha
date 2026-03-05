@@ -26,7 +26,6 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Send to backend API
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -64,7 +63,7 @@ export default function ContactForm() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div>
+          <div className="animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Get In Touch
             </h2>
@@ -200,7 +199,7 @@ export default function ContactForm() {
           </div>
 
           {/* Contact Information */}
-          <div className="lg:pl-12">
+          <div className="lg:pl-12 animate-fade-in delay-200">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Contact Information
             </h2>
@@ -209,7 +208,7 @@ export default function ContactForm() {
             </p>
 
             <div className="space-y-6">
-              {/* Address */}
+              {/* Head Office - Kisumu */}
               <div className="flex items-start space-x-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <svg
@@ -234,9 +233,37 @@ export default function ContactForm() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Office Address</h3>
+                  <h3 className="font-semibold text-gray-900 mb-1">HEAD OFFICE - Kisumu</h3>
+                  <p className="text-gray-600">Union House, Gor Mahia Street</p>
+                  <p className="text-gray-600">P.O Box 898, 40100</p>
+                  <p className="text-gray-600">Kisumu, Kenya</p>
+                </div>
+              </div>
+
+              {/* Nairobi Office */}
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">NAIROBI OFFICE</h3>
+                  <p className="text-gray-600">Engineering House, 13 Dunga Close</p>
+                  <p className="text-gray-600">Off Dunga Road, Industrial Area</p>
+                  <p className="text-gray-600">P.O Box 62256, 00100</p>
                   <p className="text-gray-600">Nairobi, Kenya</p>
-                  <p className="text-gray-600">P.O. Box XXXX-00100</p>
                 </div>
               </div>
 
@@ -260,8 +287,33 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Phone Numbers</h3>
-                  <p className="text-gray-600">+254 XXX XXX XXX</p>
-                  <p className="text-gray-600">+254 XXX XXX XXX</p>
+                  <p className="text-gray-600">Kisumu: (057) 2026188/9</p>
+                  <p className="text-gray-600">Nairobi: (020) 554261</p>
+                </div>
+              </div>
+
+              {/* Fax */}
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Fax Numbers</h3>
+                  <p className="text-gray-600">Kisumu: (057) 2026187</p>
+                  <p className="text-gray-600">Nairobi: (020) 554261</p>
                 </div>
               </div>
 
@@ -285,8 +337,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email Address</h3>
-                  <p className="text-gray-600">info@raicha.com</p>
-                  <p className="text-gray-600">projects@raicha.com</p>
+                  <p className="text-gray-600">res@raicha.com</p>
                 </div>
               </div>
 
@@ -323,30 +374,30 @@ export default function ContactForm() {
               <p className="text-gray-600 text-sm mb-2">
                 For urgent electrical issues and emergencies:
               </p>
-              <p className="text-primary font-bold text-xl">+254 XXX XXX XXX</p>
+              <p className="text-primary font-bold text-xl">(057) 2026188/9</p>
             </div>
           </div>
         </div>
 
         {/* Google Maps Section */}
-        <div className="mt-16">
+        <div className="mt-16 animate-fade-in delay-400">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
             Find Us on the Map
           </h2>
           <div className="rounded-lg overflow-hidden shadow-xl h-96">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19034213348!2d36.70730744999999!3d-1.286389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.744039403621!2d34.751229!3d-0.091702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa44ee11a8685%3A0x54ad52b9c1a7661!2sWQ23%2BJ8%20Kisumu!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Raicha Office Location"
+              title="Raicha Head Office Location - Kisumu"
             ></iframe>
           </div>
           <p className="text-center text-gray-600 mt-4 text-sm">
-            Click on the map to get directions to our office
+            Our head office in Kisumu - Click on the map to get directions
           </p>
         </div>
       </div>
