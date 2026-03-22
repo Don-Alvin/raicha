@@ -1,0 +1,139 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "name": "Commercial Electrical",
+      "shortDescription": "Complete electrical solutions for offices, retail spaces, and commercial buildings.",
+      "fullDescription": "Our commercial electrical services cover everything from initial design and installation to ongoing maintenance and emergency repairs. We work with businesses of all sizes to ensure their electrical systems are safe, efficient, and compliant with all regulations.",
+      "image": "/images/services/commercial.jpg",
+      "features": [
+        "Office building electrical systems",
+        "Retail store installations",
+        "Restaurant and hospitality wiring",
+        "Commercial lighting design",
+        "Energy-efficient upgrades",
+        "Code compliance and inspections"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Residential Electrical",
+      "shortDescription": "Professional home electrical installations, repairs, and upgrades for safe living.",
+      "fullDescription": "From new home construction to renovations and repairs, we provide comprehensive residential electrical services. Our licensed electricians ensure your home's electrical system is safe, reliable, and meets all your family's needs.",
+      "image": "/images/services/residential.jpg",
+      "features": [
+        "New home electrical installation",
+        "Home rewiring and upgrades",
+        "Circuit breaker replacement",
+        "Outlet and switch installation",
+        "Ceiling fan and fixture installation",
+        "Home safety inspections"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Industrial Electrical",
+      "shortDescription": "Heavy-duty electrical systems for manufacturing plants and industrial facilities.",
+      "fullDescription": "We specialize in industrial electrical systems that can handle the demanding requirements of manufacturing and production environments. Our team has extensive experience with high-voltage systems, motor controls, and industrial automation.",
+      "image": "/images/services/industrial.jpg",
+      "features": [
+        "Manufacturing facility electrical",
+        "High-voltage systems (up to 33kV)",
+        "Motor control centers",
+        "Industrial automation",
+        "Power distribution systems",
+        "Preventive maintenance programs"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Electrical Repairs",
+      "shortDescription": "Fast and reliable repair services for all your electrical issues and emergencies.",
+      "fullDescription": "Electrical problems can't wait. Our skilled technicians respond quickly to diagnose and repair any electrical issue, from minor problems to major system failures. We use advanced diagnostic tools to identify problems and implement lasting solutions.",
+      "image": "/images/services/repairs.jpg",
+      "features": [
+        "Troubleshooting and diagnostics",
+        "Circuit breaker repairs",
+        "Wiring repairs and replacements",
+        "Power outage resolution",
+        "Electrical fault finding",
+        "Same-day repair service"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Lighting Installation",
+      "shortDescription": "Expert installation of indoor and outdoor lighting systems for any space.",
+      "fullDescription": "Transform your space with professional lighting installation. We design and install energy-efficient lighting solutions that enhance aesthetics, improve functionality, and reduce energy costs.",
+      "image": "/images/services/lighting.jpg",
+      "features": [
+        "LED lighting installation",
+        "Landscape and outdoor lighting",
+        "Recessed and track lighting",
+        "Security and motion sensor lights",
+        "Smart lighting systems",
+        "Lighting design consultation"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Electrical Upgrades",
+      "shortDescription": "Modernize your electrical system with panel upgrades and circuit additions.",
+      "fullDescription": "Older electrical systems may not meet modern power demands. We upgrade electrical panels, add circuits, and modernize wiring to ensure your property can safely handle today's electrical loads.",
+      "image": "/images/services/upgrades.jpg",
+      "features": [
+        "Electrical panel upgrades",
+        "Service capacity increases",
+        "Circuit additions",
+        "Wiring modernization",
+        "GFCI and AFCI installation",
+        "Voltage optimization"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Generator Installation",
+      "shortDescription": "Backup power solutions to keep your property running during outages.",
+      "fullDescription": "Never be left in the dark. We install and maintain standby generators that automatically provide power during outages, ensuring your home or business continues operating smoothly.",
+      "image": "/images/services/generator.jpg",
+      "features": [
+        "Standby generator installation",
+        "Automatic transfer switches",
+        "Generator sizing and selection",
+        "Portable generator hookups",
+        "Regular maintenance service",
+        "Emergency generator repairs"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Emergency Services",
+      "shortDescription": "24/7 emergency electrical services for urgent repairs and power restoration.",
+      "fullDescription": "Electrical emergencies require immediate attention. Our emergency response team is available 24/7 to handle urgent situations including power outages, electrical fires, and dangerous wiring issues.",
+      "image": "/images/services/emergency.jpg",
+      "features": [
+        "24/7 emergency response",
+        "Power restoration services",
+        "Electrical fire investigation",
+        "Hazardous condition repairs",
+        "Storm damage repairs",
+        "After-hours service available"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Security Systems",
+      "shortDescription": "Advanced security and surveillance system installation and monitoring.",
+      "fullDescription": "Protect your property with professional security system installation. We design and install comprehensive security solutions including cameras, alarms, and access control systems.",
+      "image": "/images/services/security.jpg",
+      "features": [
+        "CCTV camera installation",
+        "Alarm system setup",
+        "Access control systems",
+        "Video surveillance",
+        "Motion detection systems",
+        "24/7 monitoring options"
+      ]
+    }
+  ]
+}

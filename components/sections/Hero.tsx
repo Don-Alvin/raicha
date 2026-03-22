@@ -4,7 +4,6 @@ import Link from 'next/link';
 export default function Hero() {
   return (
     <section className="relative h-screen bg-gradient-to-br from-gray-800 to-gray-900 text-white">
-      {/* Background Image Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero_bg.png"
@@ -27,14 +26,8 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/projects"
-              className="bg-primary hover:bg-primary-dark px-8 py-4 rounded-full text-lg font-semibold transition-colors text-center"
-            >
-              OUR PROJECTS
-            </Link>
-            <Link
               href="/contact"
-              className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-colors text-center"
+              className="bg-primary hover:bg-primary-dark px-8 py-4 rounded-full text-lg font-semibold transition-colors text-center"
             >
               REQUEST A QUOTE
             </Link>

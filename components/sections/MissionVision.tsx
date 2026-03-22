@@ -4,10 +4,10 @@ export default function MissionVision() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Mission */}
-          <div className="bg-white p-10 rounded-lg shadow-lg">
+          <div className="bg-secondary p-10 rounded-lg shadow-lg">
             <div className="text-5xl mb-6">🎯</div>
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-white text-lg leading-relaxed">
               To provide innovative, reliable, and sustainable electrical and power 
               solutions that power East Africa's growth while maintaining the highest 
               standards of safety, quality, and environmental responsibility.

@@ -1,11 +1,20 @@
+import Image from "next/image";
+
 export default function CompanyStory() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image Placeholder */}
-          <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg h-96 flex items-center justify-center text-8xl">
-            ⚡
+          <div className="relative w-full h-96 rounded-lg overflow-hidden">
+            <Image
+              src='/images/story.png'
+              alt='Company photo'
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+            />
           </div>
 
           {/* Content */}
