@@ -3,17 +3,19 @@ import {Users, FolderCheck, Award} from 'lucide-react';
 export default function Stats() {
   const stats = [
     {
-      icon: <Users className="w-12 h-12 text-primary" />,
+      icon: <Users className="w-12 h-12 text-secondary" />,
       value: '30+',
       label: 'YEARS EXPERIENCE',
     },
     {
-      icon: <FolderCheck className="w-12 h-12 text-primary" />,
+      icon: <FolderCheck className="w-12 h-12 text-secondary
+      " />,
       value: '50+',
       label: 'PROJECTS COMPLETED',
     },
     {
-      icon: <Award className="w-12 h-12 text-primary" />,
+      icon: <Award className="w-12 h-12 text-secondary
+      " />,
       value: 'ISO 9001',
       label: 'CERTIFIED',
     },
@@ -28,7 +30,7 @@ export default function Stats() {
               <div key={index} className="flex items-center justify-center space-x-4">
                 <div className="text-5xl">{stat.icon}</div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-bold text-primary">
+                  <div className="text-3xl md:text-4xl font-bold text-secondary">
                     {stat.value}
                   </div>
                   <div className="text-sm text-gray-400 mt-1">{stat.label}</div>
