@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code"
+    google: "your-google-verification-code",
   },
 };
 
@@ -83,14 +83,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/images/logo.png" sizes="any" />
+        <link rel="images/logo.png" href="images/logo.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={inter.className}>
         <StructuredData />
         <Navigation />
-        <div className="pt-20">
+        <div className="pt-[88px]">
           {children}
         </div>
         <Footer />

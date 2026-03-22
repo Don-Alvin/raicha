@@ -13,7 +13,7 @@ export default function ContactForm() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitMessage, setSubmitMessage] = useState({ type: '', text: ''});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -25,6 +25,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitMessage({ type: '', text: ''})
     
     try {
       const response = await fetch('/api/contact', {
@@ -35,9 +36,14 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json()
+
       if (response.ok) {
         setIsSubmitting(false);
-        setSubmitMessage('Thank you! We will get back to you soon.');
+        setSubmitMessage({
+          type: 'success',
+          text: 'Thank you! We have recieved your message and we will get back to you soon.'
+      });
         setFormData({
           name: '',
           email: '',
@@ -46,15 +52,16 @@ export default function ContactForm() {
           service: '',
           message: '',
         });
-        
-        setTimeout(() => setSubmitMessage(''), 5000);
       } else {
         throw new Error('Failed to send message');
       }
     } catch (error) {
+      setSubmitMessage({type: 'error',
+        text: 'Error sending message. Please try again or contact us directly.'
+    });
+    }finally {
       setIsSubmitting(false);
-      setSubmitMessage('Error sending message. Please try again or contact us directly.');
-      setTimeout(() => setSubmitMessage(''), 5000);
+      setTimeout(() => setSubmitMessage({type: '', text: ''}), 5000)
     }
   };
 
@@ -141,27 +148,30 @@ export default function ContactForm() {
 
               {/* Service */}
               <div>
-                <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Service Required *
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                >
-                  <option value="">Select a service</option>
-                  <option value="electrical-infrastructure">Electrical Infrastructure & Power Distribution</option>
-                  <option value="backup-power">Backup Power & Energy Solutions</option>
-                  <option value="industrial-fabrication">Industrial Fabrication & Control Systems</option>
-                  <option value="ict-cabling">ICT & Structured Cabling</option>
-                  <option value="medical-environmental">Medical & Environmental Systems</option>
-                  <option value="security-fire">Security, Fire Safety & Access Control</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+                  <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Service Required *
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  >
+                    <option value="">Select a service</option>
+                    <option value="commercial-electrical">Commercial Electrical</option>
+                    <option value="residential-electrical">Residential Electrical</option>
+                    <option value="industrial-electrical">Industrial Electrical</option>
+                    <option value="electrical-repairs">Electrical Repairs</option>
+                    <option value="lighting-installation">Lighting Installation</option>
+                    <option value="electrical-upgrades">Electrical Upgrades</option>
+                    <option value="generator-installation">Generator Installation</option>
+                    <option value="emergency-services">Emergency Services</option>
+                    <option value="security-systems">Security Systems</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
 
               {/* Message */}
               <div>
@@ -190,9 +200,13 @@ export default function ContactForm() {
               </button>
 
               {/* Success Message */}
-              {submitMessage && (
-                <div className={`${submitMessage.includes('Error') ? 'bg-red-100 border-red-400 text-red-700' : 'bg-green-100 border-green-400 text-green-700'} border px-4 py-3 rounded-lg`}>
-                  {submitMessage}
+              {submitMessage.text && (
+                <div className={`${
+                    submitMessage.type === 'error' 
+                    ? 'bg-red-100 border-red-400 text-red-700' 
+                    : 'bg-green-100 border-green-400 text-green-700'
+              } border px-4 py-3 rounded-lg`}>
+                {submitMessage.text}
                 </div>
               )}
             </form>

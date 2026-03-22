@@ -4,14 +4,15 @@ import ServiceDetails from '@/components/sections/ServiceDetails';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import ServiceProcess from '@/components/sections/ServiceProcess';
 import CTA from '@/components/sections/CTA';
+import ServicesGrid from '@/components/sections/ServicesGrid';
 
 export const metadata = {
   title: 'Our Services',
-  description: 'Comprehensive electrical solutions: Power distribution up to 33kV, renewable energy, industrial fabrication, ICT cabling, medical systems, and security solutions across East Africa.',
-  keywords: 'electrical services Kenya, power distribution 33kV, solar installation Kenya, industrial electrical, structured cabling, fire alarm installation',
+  description: 'Comprehensive electrical solutions: Commercial, residential, industrial electrical services, repairs, lighting, upgrades, generators, emergency services, and security systems across East Africa.',
+  keywords: 'electrical services Kenya, commercial electrical, residential electrical, industrial electrical, electrical repairs, lighting installation, electrical upgrades, generator installation, emergency electrical service, security systems',
   openGraph: {
-    title: 'Electrical Services - Power Distribution, Solar, Industrial Systems',
-    description: 'Full-service electrical solutions from heavy industrial power to high-tech security and data.',
+    title: 'Electrical Services - Commercial, Residential & Industrial',
+    description: 'Professional electrical services for all your needs across East Africa.',
     url: 'https://raicha.com/services',
     images: ['/og-services.jpg'],
   },
@@ -22,10 +23,10 @@ export default function ServicesPage() {
     <main>
       <PageHero
         title="Our Services"
-        subtitle="Comprehensive electrical solutions for every need"
+        subtitle="Professional electrical solutions for residential, commercial, and industrial clients across East Africa"
       />
       <ServicesOverview />
-      <ServiceDetails />
+      <ServicesGrid />
       <WhyChooseUs />
       <ServiceProcess />
       <CTA

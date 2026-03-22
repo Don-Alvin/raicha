@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import Stats from '@/components/sections/Stats';
 import Expertise from '@/components/sections/Expertise';
-import Partners from '@/components/sections/Partners';
+import Certifications from '@/components/sections/Certifications';
 
 export const metadata: Metadata = {
   title: "Home",
@@ -21,7 +21,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <Expertise />
-      <Partners />
+      <Certifications />
     </main>
   );
 }
