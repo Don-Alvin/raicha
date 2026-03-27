@@ -3,6 +3,8 @@ import Hero from '@/components/sections/Hero';
 import Stats from '@/components/sections/Stats';
 import Expertise from '@/components/sections/Expertise';
 import Certifications from '@/components/sections/Certifications';
+import PrecisionSafety from '@/components/sections/PrecisionSafety';
+import FinalCTA from '@/components/sections/FinalCTA';
 
 export const metadata: Metadata = {
   title: "Home",
@@ -20,8 +22,15 @@ export default function Home() {
     <main>
       <Hero />
       <Stats />
+      <PrecisionSafety />
       <Expertise />
       <Certifications />
+      <FinalCTA
+        title="Ready to Optimize Your Infrastructure?"
+        description="Connect with our engineering team today for a comprehensive site audit and custom solution proposal."
+        buttonOneText="CONTACT EXPERT TEAM"
+        buttonOneHref="/contact"
+      />
     </main>
   );
 }

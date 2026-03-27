@@ -1,82 +1,116 @@
 import Link from 'next/link';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-on-background pt-section pb-8">
+      <div className="container mx-auto px-4 lg:px-8">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Company Info */}
-          <div>
-            <h3 className="text-2xl font-bold mb-4">RAICHA</h3>
-            <p className="text-gray-400 text-sm">
+          <div className="space-y-4">
+            <h3 className="text-display-sm font-bold text-white">RAICHA</h3>
+            <p className="text-body-sm text-white leading-relaxed">
               Powering East Africa's Infrastructure Since 1994
             </p>
-            <div className="mt-4">
-              <p className="text-gray-400 text-sm">ISO 9001 Certified</p>
+            <div className="pt-2">
+              <span className="text-label-sm text-primary border-l-2 border-primary pl-3">
+                ISO 9001 Certified
+              </span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
-              <li><Link href="/projects" className="hover:text-primary transition-colors">Projects</Link></li>
-              <li><Link href="/gallery" className="hover:text-primary transition-colors">Gallery</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+            <h4 className="text-label-md font-semibold text-white mb-6 tracking-wide">
+              QUICK LINKS
+            </h4>
+            <ul className="space-y-3">
+              {['Home', 'About Us', 'Services', 'Projects', 'Gallery', 'Contact'].map((item) => (
+                <li key={item}>
+                  <Link
+                    href={`/${item === 'Home' ? '' : item.toLowerCase().replace(' ', '')}`}
+                    className="text-body-sm text-white hover:text-primary transition-colors duration-200 block"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Our Services</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>Electrical Infrastructure & Power Distribution</li>
-              <li>Backup Power & Energy Solutions</li>
-              <li>Industrial Fabrication & Control Systems</li>
-              <li>ICT & Structured Cabling</li>
-              <li>Medical & Environmental Systems</li>
-              <li>Security, Fire Safety & Access Control</li>
+            <h4 className="text-label-md font-semibold text-white mb-6 tracking-wide">
+              OUR SERVICES
+            </h4>
+            <ul className="space-y-3">
+              {[
+                'Electrical Infrastructure & Power Distribution',
+                'Backup Power & Energy Solutions',
+                'Industrial Fabrication & Control Systems',
+                'ICT & Structured Cabling',
+                'Medical & Environmental Systems',
+                'Security, Fire Safety & Access Control',
+              ].map((service) => (
+                <li key={service} className="text-body-sm text-white">
+                  {service}
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contact Us</h4>
-            <div className="space-y-4 text-sm text-gray-400">
+            <h4 className="text-label-md font-semibold text-white mb-6 tracking-wide">
+              CONTACT
+            </h4>
+            <div className="space-y-6">
               {/* Head Office */}
               <div>
-                <p className="font-semibold text-white mb-1">HEAD OFFICE - Kisumu</p>
-                <p>Union House, Gor Mahia Street</p>
-                <p>P.O Box 898, 40100</p>
-                <p>Kisumu, Kenya</p>
-                <p className="mt-1">Tel: (057) 2026188/9</p>
-                <p>Fax: (057) 2026187</p>
+                <p className="text-label-sm font-semibold text-white mb-2">HEAD OFFICE — KISUMU</p>
+                <address className="text-body-sm text-white not-italic space-y-1">
+                  <p>Union House, Gor Mahia Street</p>
+                  <p>P.O Box 898, 40100</p>
+                  <p>Kisumu, Kenya</p>
+                  <p className="mt-2">Tel: (057) 2026188/9</p>
+                  <p>Fax: (057) 2026187</p>
+                </address>
               </div>
 
               {/* Nairobi Office */}
               <div>
-                <p className="font-semibold text-white mb-1">NAIROBI OFFICE</p>
-                <p>Engineering House, 13 Dunga Close</p>
-                <p>Off Dunga Road, Industrial Area</p>
-                <p>P.O Box 62256, 00100</p>
-                <p>Nairobi, Kenya</p>
-                <p className="mt-1">Tel: (020) 554261</p>
-                <p>Fax: (020) 554261</p>
+                <p className="text-label-sm font-semibold text-white mb-2">NAIROBI OFFICE</p>
+                <address className="text-body-sm text-white not-italic space-y-1">
+                  <p>Engineering House, 13 Dunga Close</p>
+                  <p>Off Dunga Road, Industrial Area</p>
+                  <p>P.O Box 62256, 00100</p>
+                  <p>Nairobi, Kenya</p>
+                  <p className="mt-2">Tel: (020) 554261</p>
+                  <p>Fax: (020) 554261</p>
+                </address>
               </div>
 
+              {/* Email */}
               <div>
-                <p className="font-semibold text-white mb-1">Email</p>
-                <p>res@raicha.com</p>
+                <p className="text-label-sm font-semibold text-white mb-2">EMAIL</p>
+                <a
+                  href="mailto:res@raicha.com"
+                  className="text-body-sm text-white hover:text-primary transition-colors duration-200"
+                >
+                  res@raicha.com
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Raicha. All rights reserved.</p>
+        {/* Bottom Bar - No border line, using tonal separation */}
+        <div className="mt-12 pt-8 text-center">
+          <p className="text-body-sm text-on-surface-variant">
+            &copy; {currentYear} Raicha Electro Service. Industrial Excellence Defined.
+          </p>
         </div>
       </div>
     </footer>

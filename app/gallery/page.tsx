@@ -1,7 +1,7 @@
 import PageHero from '@/components/sections/PageHero';
 import GalleryGrid from '@/components/sections/GalleryGrid';
-import CTA from '@/components/sections/CTA';
 import GalleryStats from '@/components/sections/GalleryStats';
+import FinalCTA from '@/components/sections/FinalCTA';
 
 export const metadata = {
   title: 'Gallery',
@@ -19,16 +19,18 @@ export default function GalleryPage() {
   return (
     <main>
       <PageHero
-        title="Project Gallery"
+        overline='EXCELLENCE'
+        title="Our Project Portfolio"
         subtitle="A visual showcase of 30+ years of excellence"
+        backgroundImage='/images/services_hero.png'
       />
       <GalleryStats />
       <GalleryGrid />
-      <CTA
-        title="Ready to See Your Project Here?"
-        description="Let's create something amazing together"
-        buttonText="START YOUR PROJECT"
-        buttonLink="/contact"
+      <FinalCTA
+          title="Ready to Bring Your Vision to Life?"
+          description="Explore our portfolio of completed projects and let us help you plan your next industrial electrical installation."
+          buttonOneText="DISCUSS YOUR PROJECT"
+          buttonOneHref="/contact"
       />
     </main>
   );

@@ -1,39 +1,44 @@
-import {Users, FolderCheck, Award} from 'lucide-react';
+import { Users, FolderCheck, Award } from 'lucide-react';
 
 export default function Stats() {
   const stats = [
     {
-      icon: <Users className="w-12 h-12 text-secondary" />,
+      icon: <Users className="w-8 h-8 text-white" strokeWidth={1.5} />,
       value: '30+',
       label: 'YEARS EXPERIENCE',
     },
     {
-      icon: <FolderCheck className="w-12 h-12 text-secondary
-      " />,
+      icon: <FolderCheck className="w-8 h-8 text-white" strokeWidth={1.5} />,
       value: '50+',
       label: 'PROJECTS COMPLETED',
     },
     {
-      icon: <Award className="w-12 h-12 text-secondary
-      " />,
+      icon: <Award className="w-8 h-8 text-white" strokeWidth={1.5} />,
       value: 'ISO 9001',
       label: 'CERTIFIED',
     },
   ];
 
   return (
-    <section className="relative -mt-20 z-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto bg-gray-900 text-white py-12 px-8 rounded-lg shadow-2xl">
+    <section className="relative z-20 -mt-16 lg:-mt-20 ">
+      <div className="container mx-auto px-4 lg:px-8 ">
+        <div className="max-w-5xl mx-auto bg-on-background py-10 lg:py-12 px-8 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="flex items-center justify-center space-x-4">
-                <div className="text-5xl">{stat.icon}</div>
+              <div 
+                key={index} 
+                className="flex items-center justify-center space-x-4"
+              >
+                <div className="flex-shrink-0">
+                  {stat.icon}
+                </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-bold text-secondary">
+                  <div className="text-display-sm font-bold text-white leading-none">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-400 mt-1">{stat.label}</div>
+                  <div className="text-label-sm text-on-surface-variant mt-1 tracking-wide">
+                    {stat.label}
+                  </div>
                 </div>
               </div>
             ))}

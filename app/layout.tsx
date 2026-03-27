@@ -90,7 +90,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <StructuredData />
         <Navigation />
-        <div className="pt-[88px]">
+        <div className="pt-20">
           {children}
         </div>
         <Footer />
