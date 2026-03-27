@@ -1,10 +1,9 @@
-import PageHero from '@/components/sections/PageHero';
 import ServicesOverview from '@/components/sections/ServicesOverview';
-import ServiceDetails from '@/components/sections/ServiceDetails';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import ServiceProcess from '@/components/sections/ServiceProcess';
-import CTA from '@/components/sections/CTA';
 import ServicesGrid from '@/components/sections/ServicesGrid';
+import FinalCTA from '@/components/sections/FinalCTA';
+import PageHero from '@/components/sections/PageHero';
 
 export const metadata = {
   title: 'Our Services',
@@ -22,18 +21,20 @@ export default function ServicesPage() {
   return (
     <main>
       <PageHero
-        title="Our Services"
-        subtitle="Professional electrical solutions for residential, commercial, and industrial clients across East Africa"
+        overline='INDUSTRIAL PRECISION'
+        title="Engineered Excellence"
+        subtitle="Delivering high-integrity electrical infrastructure for complex industrial environments. We combine architectural precision with engineering authority."
+        backgroundImage='/images/services_hero.png'
       />
       <ServicesOverview />
       <ServicesGrid />
       <WhyChooseUs />
       <ServiceProcess />
-      <CTA
-        title="Ready to Start Your Project?"
-        description="Get in touch with us today for a free consultation and quote"
-        buttonText="REQUEST A QUOTE"
-        buttonLink="/contact"
+      <FinalCTA
+        title="Elevate Your Infrastructure"
+        description="Contact our specialized engineering team to discuss your facility's specific electrical requirements and optimize your power distribution."
+        buttonOneText="REQUEST QUOTE"
+        buttonOneHref="/contact"
       />
     </main>
   );

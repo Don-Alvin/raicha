@@ -1,49 +1,54 @@
-import Image from "next/image";
+import Image from 'next/image';
+import SectionContainer from '@/components/ui/SectionContainer';
+import Overline from '@/components/ui/Overline';
 
-export default function CompanyStory() {
+export default function Evolution() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image Placeholder */}
-          <div className="relative w-full h-96 rounded-lg overflow-hidden">
-            <Image
-              src='/images/story.png'
-              alt='Company photo'
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority
-            />
+    <SectionContainer background="default" spacing="large">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Left Content */}
+        <div>
+          <Overline>THE EVOLUTION</Overline>
+          <h2 className="text-display-sm font-bold text-on-background mb-6">
+            Regional Technical Leader.
+          </h2>
+          <div className="space-y-4 text-body-lg text-on-surface-variant leading-relaxed">
+            <p>
+              Founded on the principles of absolute technical integrity, Raicha Electro Service began 
+              as a specialized electrical consultancy. Our journey has been defined by a relentless 
+              pursuit of solving the most complex energy challenges in the industrial sector.
+            </p>
+            <p>
+              Today, we command a reputation for excellence in high-tension installations, automated 
+              control systems, and sustainable energy infrastructure, serving as the backbone for 
+              heavy industry across the globe.
+            </p>
           </div>
-
-          {/* Content */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Story
-            </h2>
-            <div className="space-y-4 text-gray-600 text-lg">
-              <p>
-                Since 1994, Raicha has been at the forefront of electrical contracting 
-                and power distribution in East Africa. What started as a small electrical 
-                contracting firm has grown into one of the region's most trusted names in 
-                infrastructure development.
-              </p>
-              <p>
-                With over three decades of experience, we have successfully completed more 
-                than 500 projects across Kenya, Uganda, Tanzania, and Rwanda. Our commitment 
-                to excellence and innovation has made us the preferred partner for both 
-                public and private sector clients.
-              </p>
-              <p>
-                Today, we specialize in electrical installations, power distribution systems 
-                up to 33kV, renewable energy solutions, and specialized systems including 
-                structured cabling, fire alarms, and security systems.
-              </p>
+          
+          {/* Stats below text */}
+          <div className="mt-8">
+            <div className="inline-block bg-surface-container-lowest px-6 py-4 hover-glow">
+              <div className="text-display-md font-bold text-primary">
+                30+
+              </div>
+              <div className="text-label-sm text-on-surface-variant tracking-wide">
+                YEARS OF INNOVATION
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Right Image */}
+        <div className="relative h-[400px] lg:h-[500px] overflow-hidden">
+          <Image
+            src="/images/evolution.jpg"
+            alt="Industrial evolution"
+            fill
+            className="object-contain saturate-[0.9]"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 }

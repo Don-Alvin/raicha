@@ -1,9 +1,10 @@
-import PageHero from '@/components/sections/PageHero';
 import CompanyStory from '@/components/sections/CompanyStory';
 import CoreValues from '@/components/sections/CoreValues';
 import Certifications from '@/components/sections/Certifications';
 import Stats from '@/components/sections/Stats';
 import MissionVision from '@/components/sections/MissionVision';
+import PageHero from '@/components/sections/PageHero';
+import FinalCTA from '@/components/sections/FinalCTA';
 
 export const metadata = {
   title: 'About Us',
@@ -21,14 +22,21 @@ export default function AboutPage() {
   return (
     <main>
       <PageHero
-        title="About Us"
-        subtitle="Three decades of excellence in electrical contracting"
+        overline='OUR LEGACY'
+        title="A Heritage of Engineering Excellence"
+        subtitle="Raicha Electro Service has defined the standard for industrial electrical systems for over three decades, merging precision engineering with visionary innovation."
+        backgroundImage='/images/about_hero.png'
       />
-      <Stats />
       <CompanyStory />
       <MissionVision />
       <CoreValues />
       <Certifications />
+      <FinalCTA
+        title="Engineering Leadership for the Future"
+        description="Join forces with our team of industry experts to drive innovation and excellence in your next infrastructure project."
+        buttonOneText="SPEAK TO OUR TEAM"
+        buttonOneHref="/contact"
+      />
     </main>
   );
 }

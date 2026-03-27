@@ -1,110 +1,90 @@
 'use client';
 
-import Image from 'next/image';
+import Link from 'next/link';
+import { Zap, Shield, Gauge } from 'lucide-react';
+import SectionContainer from '@/components/ui/SectionContainer';
+import Overline from '@/components/ui/Overline';
 
 export default function Expertise() {
-  const services = [
+  const featuredServices = [
     {
       id: 1,
       name: "Commercial Electrical",
       description: "Complete electrical solutions for offices, retail spaces, and commercial buildings.",
       image: "/images/expertise/commercial.png",
+      icon: Zap
     },
     {
       id: 2,
       name: "Residential Electrical",
       description: "Professional home electrical installations, repairs, and upgrades for safe living.",
       image: "/images/expertise/residential.png",
+      icon: Zap
     },
     {
       id: 3,
       name: "Industrial Electrical",
       description: "Heavy-duty electrical systems for manufacturing plants and industrial facilities.",
       image: "/images/expertise/industrial.png",
-    },
-    {
-      id: 4,
-      name: "Electrical Repairs",
-      description: "Fast and reliable repair services for all your electrical issues and emergencies.",
-      image: "/images/expertise/repairs.png",
-    },
-    {
-      id: 5,
-      name: "Lighting Installation",
-      description: "Expert installation of indoor and outdoor lighting systems for any space.",
-      image: "/images/expertise/lighting.png",
-    },
-    {
-      id: 6,
-      name: "Electrical Upgrades",
-      description: "Modernize your electrical system with panel upgrades and circuit additions.",
-      image: "/images/expertise/upgrades.png",
-    },
-    {
-      id: 7,
-      name: "Generator Installation",
-      description: "Backup power solutions to keep your property running during outages.",
-      image: "/images/expertise/generator.png",
-    },
-    {
-      id: 8,
-      name: "Emergency Services",
-      description: "24/7 emergency electrical services for urgent repairs and power restoration.",
-      image: "/images/expertise/emergency.png",
+      icon: Zap
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Expertise
-          </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Professional electrical services for residential, commercial, and industrial clients
-          </p>
-        </div>
+    <SectionContainer background="surface-low" spacing="large">
+      {/* Section Header */}
+      <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+        <Overline>ENGINEERED SERVICE SOLUTIONS</Overline>
+        <h2 className="text-display-md text-on-background mb-6">
+          Engineered Service Solutions
+        </h2>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+      {/* Services Grid - 3 columns */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-12">
+        {featuredServices.map((service, index) => {
+          const IconComponent = service.icon;
+          return (
             <div
               key={service.id}
-              className="group relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 animate-scale-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group bg-surface-container-lowest p-8 transition-all duration-300 hover:bg-on-background animate-scale-in hover-glow"
+              style={{ animationDelay: `${index * 80}ms` }}
             >
-              {/* Image Container */}
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                {/* Dark Overlay on Hover */}
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300"></div>
-                
-                {/* Service Name Overlay on Image */}
-                <div className="absolute inset-0 flex items-end p-6">
-                  <h3 className="text-2xl font-bold text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    {service.name}
-                  </h3>
-                </div>
+              {/* Number */}
+              <div className="text-display-lg font-bold text-primary/20 mb-4 leading-none group-hover:text-primary/30 transition-colors duration-300">
+                {String(service.id).padStart(2, '0')}
               </div>
-
+              
+              {/* Icon */}
+              <IconComponent 
+                className="text-primary mb-6 group-hover:text-primary/90 transition-colors duration-300" 
+                size={40} 
+                strokeWidth={1.5}
+              />
+              
+              {/* Title */}
+              <h3 className="text-headline-md font-bold text-on-background mb-4 group-hover:text-white transition-colors duration-300">
+                {service.name}
+              </h3>
+              
               {/* Description */}
-              <div className="p-6 bg-white">
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-
-              {/* Bottom Border Effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              <p className="text-body-md text-on-surface-variant leading-relaxed mb-6 group-hover:text-white/80 transition-colors duration-300">
+                {service.description}
+              </p>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
-    </section>
+
+      {/* See All Services Link */}
+      <div className="text-center">
+        <Link
+          href="/services"
+          className="inline-flex items-center text-label-md text-primary font-semibold hover:opacity-80 transition-opacity"
+        >
+          SEE ALL SERVICES →
+        </Link>
+      </div>
+    </SectionContainer>
   );
 }

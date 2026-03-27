@@ -1,4 +1,6 @@
 import { Trophy, Award, Users, Zap, CheckCircle, Shield } from 'lucide-react';
+import SectionContainer from '@/components/ui/SectionContainer';
+import Overline from '@/components/ui/Overline';
 
 export default function WhyChooseUs() {
   const reasons = [
@@ -24,7 +26,7 @@ export default function WhyChooseUs() {
     },
     {
       icon: CheckCircle,
-      title: '500+ Projects',
+      title: '50+ Projects',
       description: 'Successfully completed projects across East Africa',
     },
     {
@@ -35,35 +37,40 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Why Choose Raicha?
-          </h2>
-          <p className="text-gray-600 text-lg">
-            The trusted partner for all your electrical needs
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reasons.map((reason, index) => {
-            const IconComponent = reason.icon;
-            return (
-              <div
-                key={index}
-                className="text-center p-6 hover:bg-gray-50 rounded-lg transition-colors duration-300"
-              >
-                <IconComponent className="mx-auto text-primary mb-4" size={56} strokeWidth={1.5} />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {reason.title}
-                </h3>
-                <p className="text-gray-600">{reason.description}</p>
-              </div>
-            );
-          })}
-        </div>
+    <SectionContainer background="surface" spacing="large">
+      <div className="text-center mb-12">
+        <Overline>WHY CHOOSE US</Overline>
+        <h2 className="text-display-sm font-bold text-on-background">
+          Why Choose Raicha?
+        </h2>
+        <p className="text-body-lg text-on-surface-variant mt-4">
+          The trusted partner for all your electrical needs
+        </p>
       </div>
-    </section>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {reasons.map((reason, index) => {
+          const IconComponent = reason.icon;
+          return (
+            <div
+              key={index}
+              className="group bg-surface-container-lowest p-8 text-center transition-all duration-300 hover:bg-on-background hover-glow"
+            >
+              <IconComponent 
+                className="mx-auto text-primary mb-5 group-hover:text-primary/90 transition-colors duration-300" 
+                size={48} 
+                strokeWidth={1.5} 
+              />
+              <h3 className="text-headline-sm font-bold text-on-background mb-2 group-hover:text-white transition-colors duration-300">
+                {reason.title}
+              </h3>
+              <p className="text-body-sm text-on-surface-variant group-hover:text-white/80 transition-colors duration-300">
+                {reason.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    </SectionContainer>
   );
 }

@@ -1,3 +1,6 @@
+import SectionContainer from '@/components/ui/SectionContainer';
+import Overline from '@/components/ui/Overline';
+
 export default function ServiceProcess() {
   const steps = [
     {
@@ -28,29 +31,35 @@ export default function ServiceProcess() {
   ];
 
   return (
-    <section className="py-20 bg-gray-900 text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Process
-          </h2>
-          <p className="text-gray-400 text-lg">
-            A proven approach to delivering excellence
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-          {steps.map((step, index) => (
-            <div key={index} className="text-center">
-              <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                {step.number}
-              </div>
-              <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-              <p className="text-gray-400 text-sm">{step.description}</p>
-            </div>
-          ))}
-        </div>
+    <SectionContainer background="surface" spacing="large">
+      <div className="text-center mb-12">
+        <Overline>OUR METHODOLOGY</Overline>
+        <h2 className="text-display-sm font-bold text-on-background mb-4">
+          Our Process
+        </h2>
+        <p className="text-body-lg text-on-surface-variant">
+          A proven approach to delivering excellence
+        </p>
       </div>
-    </section>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className="group text-center"
+          >
+            <div className="text-display-lg font-bold text-primary/30 mb-4 group-hover:text-primary/40 transition-colors duration-300">
+              {step.number}
+            </div>
+            <h3 className="text-headline-sm font-bold text-on-background mb-2 group-hover:text-primary transition-colors duration-300">
+              {step.title}
+            </h3>
+            <p className="text-body-sm text-on-surface-variant leading-relaxed">
+              {step.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </SectionContainer>
   );
 }
