@@ -17,9 +17,11 @@ export default function ContactPage() {
   return (
     <main>
       <PageHero
-        title="Contact Us"
-        subtitle="Let's discuss your next electrical project"
-      />
+        overline='CONTACT US'
+        title='Contact Our Specialized Team'
+        subtitle='Raicha Electro Service provides specialized electrical such as commercial lighting, industrial electricity infrastructure, specialized high voltage infrastructure. Reach out for technical consultation.'
+        backgroundImage='/images/contact_hero.png'
+       />
       <ContactForm />
     </main>
   );
